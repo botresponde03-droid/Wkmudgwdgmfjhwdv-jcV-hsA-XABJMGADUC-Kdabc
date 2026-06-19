@@ -10,7 +10,7 @@
 ##
 ## ##
 
-import discord, json
+import discord, json, os
 from datetime import datetime
 from discord import app_commands
 
@@ -705,4 +705,4 @@ async def resetcooldown(interaction: discord.Interaction, user: discord.User, st
     
     return await interaction.response.send_message(embed=embd, ephemeral=True)
 
-bot.run(config['token'])
+bot.run(os.getenv('DISCORD_TOKEN'))
